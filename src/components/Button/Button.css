@@ -1,0 +1,21 @@
+.submit{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #2231AA;
+  padding: 16px 32px 16px 32px;
+  width: 544px;
+  height: 56px;
+  gap: 10px;
+  border: none;
+  border-radius: 2px;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 24;
+  color: white;
+}
+
+button:hover, button:active, button:focus {
+  opacity: 0.8;
+  transition: .5s;
+}
