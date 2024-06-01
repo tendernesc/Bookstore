@@ -1,0 +1,45 @@
+.sign-in-inputs{
+    margin-bottom: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+    width: 400px;
+}
+
+.sign-in-form{
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+}
+
+.sign-in-link{
+    display: flex;
+    margin: 0 auto;
+    outline: none;
+    text-decoration: none;
+}
+
+.passwd-link{
+    align-self: start;
+    margin-bottom: 48px;
+    outline: none;
+    text-decoration: none;
+    color: blue;
+}
+
+.sign-in-link .link{
+    margin-left: 5px;
+    line-height: 20px;
+    color: blue;
+    
+}
+
+.passwd-link__forgot{
+    text-decoration: none;
+    color:  blue;
+}
+
+.sign-in-link__sign{
+    text-decoration: none;
+}

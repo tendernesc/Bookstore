@@ -1,0 +1,71 @@
+.books{
+  width: 1120px;
+  display: flex;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.books-info{
+  margin-right: 10px;
+  margin-left: 10px;
+  text-decoration: none;
+}
+
+.books-info-wrapper{
+  align-items: center;
+  width: 335px;
+  text-align: center;
+}
+
+.books-info-wrapper__image{
+  width: 326x; 
+  height: 384px;
+  cursor: pointer;
+  object-fit: cover; 
+  background-color: #cdf7f8;
+}
+
+.books-info__description{
+  margin-top: 20px;
+  margin-bottom: 25px;
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 32px;
+  max-width: 328px;
+  letter-spacing: -1.5px;
+  text-decoration: none;
+  text-align: start;
+}
+
+.books-info__author{
+  color: #A8A8A8;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 24px;
+  text-align: left;
+  letter-spacing: 0.3px;
+  margin-bottom: 28px;
+}
+
+.books-info-main{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 48px;
+}
+
+.books-info-main__price{
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 32px;
+  text-align: left;
+  cursor: pointer;
+}
+
+.books-info-main__rating{
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+}

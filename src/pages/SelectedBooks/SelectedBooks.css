@@ -1,0 +1,147 @@
+.back{
+  width: 1120px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction:row;
+  margin-top: 80px;
+  margin-bottom: 50px;
+}
+
+.back__arrow{
+  margin-right: 8px;
+  text-align: center;
+  cursor: pointer;
+  margin-top: 2px;
+}
+
+.back__main{
+  color: rgb(42, 42, 44);
+  cursor: pointer;
+  font-size: 18px;
+  text-decoration: none;
+}
+
+.back__main_hover:hover{
+  color: rgb(135, 139, 194);
+}
+
+.back__title{
+  width: 1120px;
+  margin: 0 auto;
+  display: flex;
+  margin-bottom: 20px;
+  font-size: 40px;
+  font-family: 'Inter';
+}
+
+.back__subtitle{
+  width: 1120px;
+  margin: 0 auto;
+  display: flex;
+  margin-bottom: 40px;
+  font-size: 20px;
+  font-family: 'Inter';
+  color: rgb(128, 128, 128);
+}
+
+.back-wrapper{
+  width: 1120px;
+  margin: 0 auto;
+  display: flex;
+  position: relative;
+}
+
+.back-wrapper__image{
+  width: 450px;
+  height: 520px;
+  background-color: rgb(208, 253, 253);
+}
+
+.back-wrapper-main{
+  margin-left: 100px;
+  
+}
+
+.back-wrapper-main__price{
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 40px;
+  margin-top: 20px;
+}
+
+.back-wrapper-main__additional{
+  margin-top: 18px;
+  font-size: 16px;
+  font-family: 'Inter';
+  color: rgb(128, 128, 128);
+}
+
+.back-wrapper-main__additional_info{
+  position: absolute;
+  right: 120px;
+  font-size: 16px;
+  font-family: 'Inter';
+  font-weight: 600;
+}
+
+.back-wrapper-main__button_add{
+  margin-top: 80px;
+  background-color: #54545a;
+  padding: 16px 32px 16px 32px;
+  width: 460px;
+  height: 56px;
+  gap: 10px;
+  border: none;
+  cursor: pointer;
+  color: rgb(255, 255, 255);
+  font-size: 16px;
+  font-family: 'Inter';
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-decoration: none;
+}
+
+.back-wrapper-main__button_favorites{
+  margin-top: 20px;
+  background-color: #54545a;
+  padding: 16px 32px 16px 32px;
+  width: 460px;
+  height: 56px;
+  gap: 10px;
+  border: none;
+  cursor: pointer;
+  color: rgb(255, 255, 255);
+  font-size: 16px;
+  font-family: 'Inter';
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-decoration: none;
+}
+
+.back-wrapper-main__button_add:hover{
+  opacity: 0.8;
+  border: none;
+}
+
+.desc-wrapper{
+  width: 1120px;
+  margin: 0 auto;
+  display: flex;
+  margin-top: 36px;
+  margin-bottom: 36px
+}
+
+.desc-wrapper__info{
+  font-size: 26px;
+  font-family: 'Inter';
+  font-weight: 700;
+  letter-spacing: -1px;
+}
+
+.desc-wrapper__info_text{
+  margin-top: 10px;
+  font-size: 20px;
+  font-family: 'Inter';
+  font-weight:300;
+  margin-bottom: 10px;
+}

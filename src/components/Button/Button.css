@@ -2,7 +2,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #2231AA;
+  background-color: #54545a;
   padding: 16px 32px 16px 32px;
   width: 544px;
   height: 56px;
@@ -13,9 +13,12 @@
   font-size: 18px;
   line-height: 24;
   color: white;
+  cursor: pointer;
+  outline: none;
+  text-decoration: none;
+  font-family: 'Inter';
 }
 
-button:hover, button:active, button:focus {
+button:hover{
   opacity: 0.8;
-  transition: .5s;
 }

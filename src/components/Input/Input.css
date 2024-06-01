@@ -1,0 +1,36 @@
+.input{
+  height: 84px;
+  width: 544px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 0 auto;
+}
+
+.input-title{
+  height: 20px;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 20px;
+}
+
+.input-text{
+  height: 56px;
+  outline: none;
+  border-radius: 2px;
+  border: none;
+  padding: 18px 0 18px 20px;
+  color: #313037;
+  background-color: #FFF;
+  border: 2px solid #FFF
+}
+
+.input-text:focus{
+  border: 2px solid #DADADA
+}
+
+.input-text::placeholder{
+  font-style: 16px;
+  font-weight: 400;
+  line-height: 20px;
+}

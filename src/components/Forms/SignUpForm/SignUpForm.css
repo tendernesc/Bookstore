@@ -1,0 +1,38 @@
+.form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.inputs{
+    margin-bottom: 48px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+}
+
+.form-wrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: 624px;
+    padding: 40px;
+    border: 1px solid #DADADA;
+    background-color: #F3F3F3;
+}
+
+.link{
+    display: flex;
+}
+
+.link .link{
+    margin-left: 5px;
+    line-height: 20px;
+    color: blue;
+    outline: none;
+}
+
+.link__sign{
+    text-decoration: none;
+}

@@ -1,0 +1,20 @@
+.registration-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 48px;
+    align-items: flex-start;
+    padding: 40px;
+    border: 1px solid #DADADA;
+}
+
+.registration-text{
+    display: flex;
+    flex-direction: column;
+}
+
+.registration-text__line{
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+}

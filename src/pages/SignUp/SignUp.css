@@ -1,0 +1,12 @@
+.sign-up{
+    width: 100%;
+    background-color: #F3F3F3;
+}
+
+.sign-up-wrapper{
+    width: 1120px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

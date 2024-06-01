@@ -1,0 +1,11 @@
+.page__title{
+  width: 1120px;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 64px;
+  margin: 0 auto;
+  letter-spacing: -1.8px;
+  height: 64px;
+  margin-top: 52px;
+  margin-bottom: 48px;
+}

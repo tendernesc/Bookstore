@@ -21,11 +21,7 @@ export interface IText {
   type: string;
 }
 
-export interface ILinks{
-  children: string;
-}
-
-export interface IPost {
+export interface IBooks {
   id: number,
   image: string,
   text: string,
@@ -34,4 +30,35 @@ export interface IPost {
   title: string,
   description: string,
   author: number
+}
+
+export interface ILinks{
+  children: string;
+}
+
+export interface IBook {
+  title: string;
+  subtitle: string;
+  isbn13: string;
+  price: string;
+  image: string;
+  url: string;
+  author: string; 
+}
+
+export interface IBooksResponse {
+  error: string;
+  total: string;
+  page: string;
+  books: IBook[];
+}
+
+export interface IBooksProps {
+  currentPage: number;
+}
+
+export interface IPaginationProps {
+  currentPage: number;
+  totalPages: number;
+  onPageChange: (page: number) => void;
 }
