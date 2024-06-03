@@ -12,8 +12,8 @@ export interface IInput {
 }
 
 export interface ITitle {
+  children: string[] | string;
   typeTitle: string;
-  children: string;
 }
 
 export interface IText {
@@ -29,7 +29,8 @@ export interface IBooks {
   lesson_num: number,
   title: string,
   description: string,
-  author: number
+  author: number,
+  isbn: string;
 }
 
 export interface ILinks{
@@ -37,6 +38,7 @@ export interface ILinks{
 }
 
 export interface IBook {
+  [x: string]: any;
   title: string;
   subtitle: string;
   isbn13: string;

@@ -1,35 +1,69 @@
-import './Header.css'
+import './Header.css';
+import { useContext, useState } from 'react';
 import { IoSearch } from "react-icons/io5";
 import { IoHeartOutline } from "react-icons/io5";
 import { IoBagHandleOutline } from "react-icons/io5";
 import { IoPersonOutline } from "react-icons/io5";
-import { Link } from 'react-router-dom';
-import LinkTo from '../LinkTo/LinkTo';
+import { Link, useNavigate } from 'react-router-dom';
+import { SearchContext } from '../../context/SearchContext';
 
+function Header() {
+  const context = useContext(SearchContext);
+  const [inputValue, setInputValue] = useState('');
+  const navigate = useNavigate();
 
-function Header(){
-  return ( 
+  if (!context) {
+    throw new Error('SearchContext must be used within a SearchProvider');
+  }
+
+  const { setSearchTerm } = context;
+
+  const handleSearchChange = (event: { target: { value: string; }; }) => {
+    setInputValue(event.target.value);
+  };
+
+  const handleSearchSubmit = (event: { preventDefault: () => void; }) => {
+    event.preventDefault();
+    if (!inputValue.trim()) {
+      alert('Введите текст для поиска');
+      return;
+    }
+    setSearchTerm(inputValue);
+    navigate(`/search?query=${inputValue}`);
+  };
+
+  return (
     <>
-        <header className="header">
-          <div className="header-logo">
-            <Link to="/" className="header-logo__text">BOOKSTORE</Link>
+      <header className="header">
+        <div className="header-logo">
+          <Link to="/" className="header-logo__text">BOOKSTORE</Link>
+        </div>
+        <form className='header-search' onSubmit={handleSearchSubmit}>
+          <div className='header-search-container'>
+            <IoSearch className='header-search-container__icon' onClick={handleSearchSubmit} />
+            <input
+              className='header-search-container__input'
+              type="text"
+              placeholder="Search..."
+              value={inputValue}
+              onChange={handleSearchChange}
+            />
           </div>
-            <form className='header-search'>
-              <div className='header-search-container'>
-                <IoSearch className='header-search-container__icon' />
-                <input className='header-search-container__input' type="text" placeholder="Search..." />
-              </div>
-            </form>
-            <div className="header-icons">
-              <div className="header-icon-wrapper">
-                <IoHeartOutline className='header-icon-wrapper__image' />
-                <IoBagHandleOutline className='header-icon-wrapper__image' />
-                <Link to={"/signin"}>
-                  <IoPersonOutline className='header-icon-wrapper__image' />
-                </Link>
-              </div>
-            </div>
-        </header>
+        </form>
+        <div className="header-icons">
+          <div className="header-icon-wrapper">
+            <Link to={"/favorites"}>
+              <IoHeartOutline className='header-icon-wrapper__image' />
+            </Link>
+            <Link to={"/cart"}>
+              <IoBagHandleOutline className='header-icon-wrapper__image' />
+              </Link>
+            <Link to={"/signin"}>
+              <IoPersonOutline className='header-icon-wrapper__image' />
+            </Link>
+          </div>
+        </div>
+      </header>
     </>
   );
 }

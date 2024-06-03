@@ -3,7 +3,7 @@
   margin: 0 auto;
   display: flex;
   flex-direction:row;
-  margin-top: 80px;
+  margin-top: 30px;
   margin-bottom: 50px;
 }
 
@@ -93,7 +93,7 @@
   gap: 10px;
   border: none;
   cursor: pointer;
-  color: rgb(255, 255, 255);
+  color: rgb(149, 255, 107);
   font-size: 16px;
   font-family: 'Inter';
   font-weight: 700;
@@ -110,7 +110,7 @@
   gap: 10px;
   border: none;
   cursor: pointer;
-  color: rgb(255, 255, 255);
+  color: rgb(121, 246, 255);
   font-size: 16px;
   font-family: 'Inter';
   font-weight: 700;

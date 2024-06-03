@@ -12,7 +12,6 @@ function Books({ currentPage }: IBooksProps) {
   const [displayedBooks, setDisplayedBooks] = useState<IBook[]>([]);
   const [error, setError] = useState<string | null>(null);
 
-
   useEffect(() => {
     const fetchBooks = async () => {
       try {
@@ -47,20 +46,23 @@ function Books({ currentPage }: IBooksProps) {
   return (
     <div className='books'>
       {displayedBooks.map(book => (
-        <Link to={`/book/${book.isbn13}`} className='books-info' key={book.isbn13}>
-        <div className='books-info-wrapper'>
-          <img className="books-info-wrapper__image" src={book.image} alt={book.title} />
+        <div className='books-item' key={book.isbn13}>
+          <div className='books-info-wrapper'>
+            <Link to={`/book/${book.isbn13}`} className='books-info'>
+              <img className="books-info-wrapper__image" src={book.image} alt={book.title} />
+            </Link>
+          </div>
+          <div className='books-info__description'>{book.title}</div>
+          <div className='books-info__author'>{book.publisher}</div>
+          <div className='books-info-main'>
+            <div className='books-info-main__price'>{book.price}</div>
+            <FaRegBookmark className='books-info-main__rating' />
+          </div>
         </div>
-        <div className='books-info__description'>{book.subtitle}</div>
-        <div className='books-info__author'>{book.author}</div>
-        <div className='books-info-main'>
-          <div className='books-info-main__price'>{book.price}</div>
-          <FaRegBookmark className='books-info-main__rating' />
-        </div>
-      </Link>
       ))}
     </div>
   );
 }
 
 export default Books;
+

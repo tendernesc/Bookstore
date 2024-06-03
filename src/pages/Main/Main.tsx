@@ -9,7 +9,7 @@ import './Main.css';
 
 function Main() {
   const [currentPage, setCurrentPage] = useState<number>(1);
-  const totalPages = 9; 
+  const totalPages = 5; 
 
   return (
     <>
