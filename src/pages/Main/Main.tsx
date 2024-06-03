@@ -15,7 +15,7 @@ function Main() {
     <>
       <Header />
       <Title typeTitle='page__title'>NEW RELEASES BOOKS</Title>
-      <Books currentPage={currentPage} />
+      <Books currentPage={currentPage} books={[]} totalPages={0} />
       <Pagination 
         currentPage={currentPage} 
         totalPages={totalPages} 

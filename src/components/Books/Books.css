@@ -22,7 +22,7 @@
 
 .books-info-wrapper__image{
   width: 326x; 
-  height: 384px;
+  height: 374px;
   cursor: pointer;
   object-fit: cover; 
   background-color: #e4ffff;
@@ -38,7 +38,10 @@
   letter-spacing: -1.5px;
   text-decoration: none;
   text-align: start;
+  height: 62px;
+  overflow: hidden; 
 }
+
 
 .books-info__author{
   color: #A8A8A8;
@@ -54,7 +57,7 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  margin-bottom: 48px;
+  margin-bottom: 28px;
 }
 
 .books-info-main__price{

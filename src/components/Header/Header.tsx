@@ -1,16 +1,23 @@
 import './Header.css';
-import { useContext, useState } from 'react';
+import { useContext, useState, useEffect } from 'react';
 import { IoSearch } from "react-icons/io5";
-import { IoHeartOutline } from "react-icons/io5";
+import { IoHeartOutline, IoHeart } from "react-icons/io5"; // Импортируем обе иконки
 import { IoBagHandleOutline } from "react-icons/io5";
 import { IoPersonOutline } from "react-icons/io5";
 import { Link, useNavigate } from 'react-router-dom';
 import { SearchContext } from '../../context/SearchContext';
+import { IBook } from '../../types/interfaces';
 
 function Header() {
   const context = useContext(SearchContext);
   const [inputValue, setInputValue] = useState('');
   const navigate = useNavigate();
+  const [favorites, setFavorites] = useState<IBook[]>([]); 
+
+  useEffect(() => {
+    const favoriteBooks = JSON.parse(localStorage.getItem('favorites') || '[]');
+    setFavorites(favoriteBooks);
+  }, []); 
 
   if (!context) {
     throw new Error('SearchContext must be used within a SearchProvider');
@@ -53,11 +60,18 @@ function Header() {
         <div className="header-icons">
           <div className="header-icon-wrapper">
             <Link to={"/favorites"}>
-              <IoHeartOutline className='header-icon-wrapper__image' />
+              {favorites.length > 0 ? 
+                <div className="heart-icon-wrapper">
+                  <IoHeartOutline className='header-icon-wrapper__image' />
+                  <div className="red-badge"></div> 
+                </div>
+                : 
+                <IoHeartOutline className='header-icon-wrapper__image' />
+              }
             </Link>
             <Link to={"/cart"}>
               <IoBagHandleOutline className='header-icon-wrapper__image' />
-              </Link>
+            </Link>
             <Link to={"/signin"}>
               <IoPersonOutline className='header-icon-wrapper__image' />
             </Link>

@@ -36,18 +36,30 @@ function SelectedBooks(): JSX.Element {
   const addToFavorites = () => {
     if (book) {
       const favorites: IBook[] = JSON.parse(localStorage.getItem('favorites') || '[]');
-      favorites.unshift(book);
-      localStorage.setItem('favorites', JSON.stringify(favorites));
-      alert('Book added to favorites!');
+      const bookExists = favorites.some(favBook => favBook.isbn13 === book.isbn13);
+  
+      if (bookExists) {
+        alert('Book is already in favorites!');
+      } else {
+        favorites.unshift(book);
+        localStorage.setItem('favorites', JSON.stringify(favorites));
+        alert('Book added to favorites!');
+      }
     }
   };
 
   const addToCart = () => {
     if (book) {
       const cart: IBook[] = JSON.parse(localStorage.getItem('cart') || '[]');
-      cart.unshift(book);
-      localStorage.setItem('cart', JSON.stringify(cart));
-      alert('Book added to cart!');
+      const bookExists = cart.some(cartBook => cartBook.isbn13 === book.isbn13);
+
+      if (bookExists) {
+        alert('Book is already in the cart!');
+      } else {
+        cart.unshift(book);
+        localStorage.setItem('cart', JSON.stringify(cart));
+        alert('Book added to cart!');
+      }
     }
   };
 

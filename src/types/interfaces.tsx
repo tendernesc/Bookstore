@@ -57,6 +57,8 @@ export interface IBooksResponse {
 
 export interface IBooksProps {
   currentPage: number;
+  books: IBook[]; 
+  totalPages: number;
 }
 
 export interface IPaginationProps {

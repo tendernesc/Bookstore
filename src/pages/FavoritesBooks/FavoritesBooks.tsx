@@ -17,6 +17,19 @@ function FavoritesBooks() {
     localStorage.setItem('favorites', JSON.stringify(updatedFavorites));
   };
 
+  const addToCart = (book: IBook) => {
+    const cart: IBook[] = JSON.parse(localStorage.getItem('cart') || '[]');
+    const bookExists = cart.some(cartBook => cartBook.isbn13 === book.isbn13);
+
+    if (bookExists) {
+      alert('Book is already in the cart!');
+    } else {
+      cart.unshift(book);
+      localStorage.setItem('cart', JSON.stringify(cart));
+      alert('Book added to cart!');
+    }
+  };
+
   return (
     <>
       <Header />
@@ -41,13 +54,19 @@ function FavoritesBooks() {
               <p className='favorites-wrapper-main__additional'>{book.publisher}, {book.year}</p>
               <p className='favorites-wrapper-main__rating'>RATING: {book.rating}/5</p>
               <p className='favorites-wrapper-main__price'>{book.price}</p>
-              <div>
-              <button 
-                className='favorites-wrapper-main__remove' 
-                onClick={() => removeFromFavorites(book.isbn13)}
-              >
-                Remove 
-              </button>
+              <div className="favorites-wrapper-main-wrapper">
+                <button 
+                  className='favorites-wrapper-main-wrapper__remove' 
+                  onClick={() => removeFromFavorites(book.isbn13)}
+                >
+                  Remove 
+                </button>
+                <button 
+                  className='favorites-wrapper-main-wrapper__add' 
+                  onClick={() => addToCart(book)}
+                >
+                  Add to Cart
+                </button>
               </div>
             </div>
           </div>
@@ -60,6 +79,7 @@ function FavoritesBooks() {
 }
 
 export default FavoritesBooks;
+
 
 
 
