@@ -6,3 +6,9 @@
   border-top: 1px solid #DADADA;
   padding: 34px 0 34px 0;
 }
+
+@media(max-width:1180px){
+  .footer{
+    width: 80vw;
+  }
+}

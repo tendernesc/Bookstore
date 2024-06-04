@@ -9,7 +9,7 @@ import './Main.css';
 
 function Main() {
   const [currentPage, setCurrentPage] = useState<number>(1);
-  const totalPages = 5; 
+  const totalPages = 3; 
 
   return (
     <>
@@ -20,9 +20,9 @@ function Main() {
         currentPage={currentPage} 
         totalPages={totalPages} 
         onPageChange={(page: number) => setCurrentPage(page)} 
-      />
-      <Subscribe />
-      <Footer />
+      /> 
+       <Subscribe />
+      <Footer />    
     </>
   );
 }

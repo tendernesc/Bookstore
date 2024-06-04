@@ -22,13 +22,13 @@ function App() {
           <Route path='/favorites' element={<FavoritesBooks/>}/>
           <Route path="/cart" element={<Basket/>}/>
           <Route path='/newpassword' element={<NewPassword />} />
-          <Route path='/registration' element={<Registration />} />
+          *<Route path='/registration' element={<Registration />} />
           <Route path='/registrsuccess' element={<RegistrationSuccess />} />
           <Route path='/signup' element={<SignUp />} />
           <Route path='/signin' element={<SignIn />} />
           <Route path='/resetPass' element={<Reset />} />
           <Route path='/book/:isbn' element={<SelectedBooks />} />
-          <Route path='/search' element={<SearchResults />} />
+          <Route path='/search' element={<SearchResults />} /> 
         </Routes>
       </BrowserRouter>
     </SearchProvider>

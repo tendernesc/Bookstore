@@ -1,25 +1,30 @@
-.favorites{
-  width: 1120px;
+.favorites {
+  width: 100%;
+  max-width: 1120px;
   margin: 0 auto;
   display: flex;
-  flex-direction:row;
+  flex-direction: row;
   margin-top: 30px;
   margin-bottom: 50px;
+  flex-wrap: wrap;
+  box-sizing: border-box;
 }
 
-.favorites-wrapper-main{
+.favorites-wrapper-main {
   display: flex;
   flex-direction: column;
   margin-left: 20px;
   margin-top: 40px;
+  flex: 1;
+  min-width: 300px;
 }
 
-.favorites-wrapper-main__description{
+.favorites-wrapper-main__description {
   font-size: 28px;
   font-weight: 700;
 }
 
-.favorites-wrapper-main__authors{
+.favorites-wrapper-main__authors {
   font-size: 20px;
   margin-top: 10px;
   color: rgb(119, 119, 119);
@@ -27,30 +32,30 @@
   margin-bottom: 40px;
 }
 
-.favorites-wrapper-main__additional{
+.favorites-wrapper-main__additional {
   font-size: 20px;
   font-weight: 700;
   margin-bottom: 8px;
 }
 
-.favorites-wrapper-main__rating{
+.favorites-wrapper-main__rating {
   font-weight: 700;
   color: rgb(119, 119, 119);
   margin-bottom: 60px;
 }
 
-.favorites-wrapper-main__price{
+.favorites-wrapper-main__price {
   font-size: 30px;
   font-weight: 700;
 }
 
-.favorites-wrapper-main-wrapper{
+.favorites-wrapper-main-wrapper {
   display: flex;
   flex-direction: row;
   margin-top: 40px;
 }
 
-.favorites-wrapper-main-wrapper__remove{
+.favorites-wrapper-main-wrapper__remove {
   display: flex;
   width: 120px;
   justify-content: end;
@@ -66,7 +71,7 @@
   border: 1px solid rgb(255, 116, 116);
 }
 
-.favorites-wrapper-main-wrapper__add{
+.favorites-wrapper-main-wrapper__add {
   display: flex;
   width: 120px;
   justify-content: end;
@@ -81,4 +86,84 @@
   font-weight: 500;
   border: 1px solid rgb(71, 255, 15);
   margin-left: 40px;
+}
+
+.books-info-wrapper__image_favorites{
+  width: 326x; 
+  height: 374px;
+  cursor: pointer;
+  object-fit: cover; 
+  background-color: #e4ffff;
+}
+
+@media (max-width: 1200px) {
+  .favorites-wrapper-main {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 992px) {
+  .favorites {  
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .favorites-wrapper-main {
+    margin-top: 20px;
+    margin-left: 30px;
+    margin-right: 30px;
+    width: 420px;
+  }
+
+  .favorites-wrapper-main-wrapper {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .books-info-wrapper__image_favorites{
+    margin-left: 80px;
+  }
+
+  .favorites-wrapper-main-wrapper__remove,
+  .favorites-wrapper-main-wrapper__add {
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+
+  .favorites-wrapper-main-wrapper__add {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .favorites-wrapper-main__description {
+    font-size: 24px;
+  }
+
+  .favorites-wrapper-main__authors,
+  .favorites-wrapper-main__additional,
+  .favorites-wrapper-main__rating,
+  .favorites-wrapper-main__price {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .favorites-wrapper-main__description {
+    font-size: 20px;
+  }
+
+  .favorites-wrapper-main__authors,
+  .favorites-wrapper-main__additional,
+  .favorites-wrapper-main__rating,
+  .favorites-wrapper-main__price {
+    font-size: 16px;
+  }
+
+  .favorites-wrapper-main-wrapper__remove,
+  .favorites-wrapper-main-wrapper__add {
+    height: 36px;
+    font-size: 14px;
+  }
 }

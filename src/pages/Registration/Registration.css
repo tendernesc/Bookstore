@@ -1,14 +1,48 @@
-.registration{
+.registration {
     display: flex;
     flex-direction: column;
     background-color: #F3F3F3;
-}
-
-.registration-wrapper{
-    width: 1120px;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  .registration-wrapper {
+    width: 100%;
+    max-width: 1120px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-bottom: 200px;
-}
+    box-sizing: border-box;
+  }
+  
+  @media (max-width: 1200px) {
+    .registration-wrapper {
+      padding: 0 20px;
+    }
+  }
+  
+  @media (max-width: 992px) {
+    .registration {
+      padding: 10px;
+    }
+  
+    .registration-wrapper {
+      padding: 0 10px;
+      margin-bottom: 100px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .registration-wrapper {
+      margin-bottom: 80px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .registration-wrapper {
+      margin-bottom: 60px;
+    }
+  }
+  

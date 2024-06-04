@@ -45,7 +45,7 @@ function FavoritesBooks() {
           <div key={index} className='favorites'>
             <div className='favorites-wrapper'>
               <Link to={`/book/${book.isbn13}`} className='books-info'>
-                <img className="books-info-wrapper__image" src={book.image} alt={book.title} />
+                <img className="books-info-wrapper__image_favorites" src={book.image} alt={book.title} />
               </Link>
             </div>
             <div className='favorites-wrapper-main'>

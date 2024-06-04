@@ -69,3 +69,59 @@
   cursor: pointer;
 }
 
+@media(max-width:1130px){
+  .subscribe{
+    width: 900px;
+  }
+  .subscribe-wrapper-info__input{
+    width: 680px;
+  }
+  .subscribe-wrapper{
+    padding: 20px 24px;
+  }
+}
+
+@media(max-width:900px){
+  .subscribe{
+    width: 700px;
+  }
+  .subscribe-wrapper-info__input{
+    width: 480px;
+  }
+  .subscribe-wrapper{
+    padding: 20px 24px;
+  }
+  .subscribe-wrapper__title{
+    font-size: 30px;
+  }
+
+  .subscribe-wrapper__description{
+    font-size: 14px;
+  }
+}
+
+@media(max-width:702px){
+  .subscribe{
+    width: 580px;
+  }
+  .subscribe-wrapper-info__input{
+    width: 360px;
+  }
+
+  .subscribe-wrapper-info__button{
+    width: 90px;
+    font-size: 12px;
+  }
+}
+
+@media(max-width:580px){
+  .subscribe{
+    width: 480px;
+  }
+  .subscribe-wrapper{
+    padding: 10px 10px;
+  }
+  .subscribe-wrapper__description{
+    max-width:450px;
+  }
+}

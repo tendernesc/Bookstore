@@ -1,4 +1,4 @@
-.loader {
+/* .loader {
   width: 70px;
   aspect-ratio: 1;
   border-radius: 50%;
@@ -9,4 +9,28 @@
   margin-top: 140px;
   margin-bottom: 140px;
 }
-@keyframes l1 {to{transform: rotate(.5turn)}}
+@keyframes l1 {to{transform: rotate(.5turn)}} */
+
+.bars-5 {
+  width: 45px;
+  margin: 0 auto;
+  margin-top: 80px;
+  margin-bottom: 120px;
+  width: 100px;
+  aspect-ratio: .75;
+  --c: no-repeat linear-gradient(#000 0 0);
+  background: 
+    var(--c) 0%   100%,
+    var(--c) 50%  100%,
+    var(--c) 100% 100%;
+  background-size: 20% 65%;
+  animation: b5 1s infinite linear;
+}
+@keyframes b5 {
+  20% {background-position: 0% 50% ,50% 100%,100% 100%}
+  40% {background-position: 0% 0%  ,50% 50% ,100% 100%}
+  60% {background-position: 0% 100%,50% 0%  ,100% 50% }
+  80% {background-position: 0% 100%,50% 100%,100% 0%  }
+}
+
+

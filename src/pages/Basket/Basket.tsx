@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState} from 'react';
 import { IBook } from '../../types/interfaces';
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
@@ -13,7 +13,7 @@ function Basket() {
   const [cart, setCart] = useState<IBook[]>(initialCart);
   const [quantities, setQuantities] = useState<Record<string, number>>(
     initialCart.reduce((acc: Record<string, number>, book: IBook) => {
-      acc[book.isbn13] = 1; // Initial quantity of each book is 1
+      acc[book.isbn13] = 1; 
       return acc;
     }, {})
   );
@@ -51,7 +51,7 @@ function Basket() {
   };
 
   const handleBuyNow = () => {
-    alert('Извините, технические неполадки с оплатой');
+    alert('Sorry, not yet :(');
   };
 
   return (
