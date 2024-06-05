@@ -1,54 +1,32 @@
 import { useEffect, useState } from 'react';
-import { PiBookmarksSimple } from "react-icons/pi";
-import { PiBookmarksSimpleFill } from "react-icons/pi";
-import { IBooksProps, IBook, IBooksResponse } from '../../types/interfaces';
+import { PiBookmarksSimple, PiBookmarksSimpleFill } from "react-icons/pi";
+import { IBooksProps, IBook } from '../../types/interfaces';
 import './Books.css';
 import Spinner from '../Spinner/Spinner'; 
 import { Link } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchBooks } from '../../slice/BookStoreSlice';
 
 function Books({ currentPage }: IBooksProps) {
   const booksPerPage = 9; 
-  const [books, setBooks] = useState<IBook[]>([]);
   const [displayedBooks, setDisplayedBooks] = useState<IBook[]>([]);
   const [favorites, setFavorites] = useState<IBook[]>(JSON.parse(localStorage.getItem('favorites') || '[]'));
-  const [error, setError] = useState<string | null>(null);
-  const [loading, setLoading] = useState<boolean>(true);
+
+  const dispatch = useDispatch()<any>;
+  const Books = useSelector((state:any) => state.Books);
+  const status = useSelector((state:any) => state.status);
 
   useEffect(() => {
-    const fetchBooks = async () => {
-      try {
-        const response = await fetch('https://api.itbook.store/1.0/new');
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        const data: IBooksResponse = await response.json();
-        const detailedBooks = await Promise.all(data.books.map(async (book: IBook) => {
-          const detailedResponse = await fetch(`https://api.itbook.store/1.0/books/${book.isbn13}`);
-          if (!detailedResponse.ok) {
-            throw new Error(`HTTP error! status: ${detailedResponse.status}`);
-          }
-          return detailedResponse.json();
-        }));
-        setBooks(detailedBooks);
-        setLoading(false);
-      } catch (err: unknown) {
-        if (err instanceof Error) {
-          setError(err.message);
-        } else {
-          setError("Unknown error");
-        }
-        setLoading(false);
-      }
-    };
-
-    fetchBooks();
-  }, []);
+    dispatch(fetchBooks());
+  }, [dispatch]);
 
   useEffect(() => {
-    const startIndex = (currentPage - 1) * booksPerPage;
-    const endIndex = Math.min(startIndex + booksPerPage, books.length); 
-    setDisplayedBooks(books.slice(startIndex, endIndex));
-  }, [currentPage, books]);
+    if (status === 'fulfilled' && Books.length > 0) {
+      const startIndex = (currentPage - 1) * booksPerPage;
+      const endIndex = Math.min(startIndex + booksPerPage, Books.length); 
+      setDisplayedBooks(Books.slice(startIndex, endIndex));
+    }
+  }, [currentPage, Books, status]);
 
   const toggleFavorite = (book: IBook) => {
     const isFavorite = favorites.some(favBook => favBook.isbn13 === book.isbn13);
@@ -64,12 +42,12 @@ function Books({ currentPage }: IBooksProps) {
     localStorage.setItem('favorites', JSON.stringify(updatedFavorites));
   };
 
-  if (loading) {
-    return <Spinner />; 
+  if (status === 'pending') {
+    return <Spinner />;
   }
 
-  if (error) {
-    return <div>Error: {error}</div>;
+  if (status === 'rejected') {
+    return <div>Error: Unable to fetch books</div>;
   }
 
   return (
@@ -108,6 +86,7 @@ function Books({ currentPage }: IBooksProps) {
 }
 
 export default Books;
+
 
 
 
